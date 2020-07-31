@@ -1,0 +1,50 @@
+{% load static %}
+{% block style %}  <link href="{% static 'card.css' %}" rel="stylesheet" /> {% endblock style %}
+
+
+	<div class="row course justify-content-center">
+		<div class="col-12 course-info">
+            <div class="row">
+                <div class="col-6">
+                    <h6>Activity:</h6>
+                </div>
+                <div class="col-6 text-right">
+                    {% if res.link %}
+                        <h6>Link: <a href="{{res.link}}" target="_blank">Read more</a></h6>
+                    {% else %}
+                        <h6>Link: <a href="#">none</a></h6>
+                    {% endif %}
+                </div>
+            </div>
+			<h2 class="text-center">{{res.activity}}</h2>
+            <hr>
+            <div class="row">
+            
+                <div class="col-4 text-center">
+                    <h3 class="font-size-14">Type:</h3>
+                    <hr>
+                    <span class="value text-capitalize">{{res.type}}</span>
+                </div>
+                <div class="col-4 text-center">
+                    <h3 class="font-size-14">Accessibility:</h3>
+                    <hr>
+                    <span class="value">{{res.accessibility}}</span>
+
+                </div>
+                <div class="col-4 text-center">
+                    <h3 class="font-size-14">Participants:</h3>  
+                    <hr>
+                    <span class="value">{{res.participants}}</span>
+                </div>
+		    </div>
+		</div>
+	</div>
+    <div class="row justify-content-center">
+        <div class="col-12 p-20">
+            <h3 class="">Hint:</h3>
+            <p class="hint-text"><span class="font-weight-bold">Link:</span> A link for read more about the activity [none, link]</p>
+            <p class="hint-text"><span class="font-weight-bold">Participants:</span> The number of people that this activity could involve [0, n]</p>
+            <p class="hint-text"><span class="font-weight-bold">Accessibility:</span> A factor describing how possible an event is to do with zero being the most accessible [0.0, 1.0]</p>
+        </div>
+    </div>
+    
